@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RhoCha | Virtual Staging</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Playfair Display', serif;
+      color: #f5f5f5;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 10;
+    }
+
+    nav .nav-logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #f4c84b;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f4c84b;
+    }
+
+    .hero {
+      background: url('images/c.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .logo-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 64px;
+      color: #f4c84b;
+      margin-bottom: -5px;
+    }
+
+    .logo-tagline {
+      font-size: 18px;
+      letter-spacing: 6px;
+      color: #f5f5f5;
+      margin-bottom: 20px;
+    }
+
+    .main-tagline {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .intro-text {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      background-color: #f4c84b;
+      color: #1a1a1a;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e0b94a;
+    }
+    
+/* SERVICES SECTION */
+#services {
+  padding: 60px 20px;
+  background-color: #1a1a1a98;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+#services h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #f4c84b;
+  font-weight: 700;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #eddfdf21;
+  padding: 30px;
+  border-radius: 12px;
+  flex: 1 1 280px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #f4c84b;
+}
+
+.service-card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.service-price {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #f4c84b;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+ <style>
+ .portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  background: url('images/mine.jpg') no-repeat center center/cover;
+  padding: 80px 20px;
+  
+}
+
+.before-after-card {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #1a1a1a98;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.before-after-card img {
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-in-out;
+}
+
+.before-after-card img.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+  </style>
+ <title>Testimonials Section</title>
+  <style>
+    .testimonials-section {
+      background-color: #f4f4f4;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .testimonials-title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .testimonials-subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 300px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-name {
+      font-size: 12px;
+      color: #888;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-card {
+        max-width: 100%;
+      }
+    }
+  </style> 
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">Rhocha</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="logo-name">RhoCha</h1>
+      <p class="logo-tagline">VIRTUAL STAGING</p>
+      <p class="main-tagline">Transforming Rooms. Turning Keys.</p>
+      <p class="intro-text">
+        At RhoCha, we turn empty rooms into irresistible, market-ready homes. Our virtual staging blends luxury, elegance, and creativity to help you sell faster and impress buyers effortlessly.
+      </p>
+      <a href="#contact" class="cta-button">Get Started</a>
+    </div>
+  </section>
+  <section id="services">
+  <h2>Our Services</h2>
+  <div class="services-container">
+    <div class="service-card">
+      <h3>Basic Virtual Staging</h3>
+      <p>Transform empty rooms with stylish furniture and decor to attract buyers.</p>
+      <p class="service-price">Starting at $8 per image</p>
+    </div>
+    <div class="service-card">
+      <h3>Premium Virtual Staging</h3>
+      <p>Luxury furnishings and detailed design to highlight your property’s best features.</p>
+      <p class="service-price">Starting at $20 per image</p>
+    </div>
+    <div class="service-card">
+         <h3>3D Plotting & Visualization</h3>
+      <p>Create realistic 3D models and interactive visualizations to showcase your property like never before.</p>
+      <p class="service-price">Contact us for pricing</p>
+    </div>
+    <div class="service-card">
+      <h3>Custom Room Styling</h3>
+      <p>Personalized staging tailored to your vision, including unique decor and layouts.</p>
+      <p class="service-price">Contact for Pricing</p>
+    </div>
+  </div>
+</section>
+    
+<section id="portfolio">
+  <h2 class="section-title">Our Portfolio</h2>
+  <div class="portfolio-container">
+    <div class="before-after-card">
+      <img src="images/1before.jpg" class="fade-in" alt="Before Staging">
+      <img src="images/1 after.jpg" class="fade-in" alt="After Staging">
+    </div>
+   
+     <div class="before-after-card">
+      <img src="images/2 before.jpg" class="fade-in" alt="Before Staging">
+      <img src="images/2 after.jpg" class="fade-in" alt="After Staging">
+    </div>
+
+     <div class="before-after-card">
+      <img src="images/3before.jpg" class="fade-in" alt="Before Staging">
+      <img src="images/3after.jpg" class="fade-in" alt="After Staging">
+    </div>
+     <div class="before-after-card">
+      <img src="images/4before.jpg" class="fade-in" alt="Before Staging">
+      <img src="images/4afterm.jpg" class="fade-in" alt="After Staging">
+    </div>
+
+     <div class="before-after-card">
+      <img src="images/5before.jpg" class="fade-in" alt="Before Staging">
+      <img src="images/5after.jpg" class="fade-in" alt="After Staging">
+    </div>
+
+     <div class="before-after-card">
+      <img src="images/6before.jpg" class="fade-in" alt="Before Staging">
+      <img src="images/6after.jpg" class="fade-in" alt="After Staging">
+    </div>
+
+     <div class="before-after-card">
+      <img src="images/7before.jpg" class="fade-in" alt="Before Staging">
+      <img src="images/7after.jpg" class="fade-in" alt="After Staging">
+    </div>
+
+     <div class="before-after-card">
+      <img src="images/8before.jpg" class="fade-in" alt="Before Staging">
+      <img src="images/8after.jpg" class="fade-in" alt="After Staging">
+    </div>
+
+    
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="testimonials-section">
+  <h2 class="testimonials-title">What Our  Clients  Say</h2>
+  <p class="testimonials-subtitle">We value your feedback — your feedback could be featured here soon!</p>
+
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <p>“I couldn’t believe the transformation! The staged photos looked carefully curated  ”</p>
+      <div class="testimonial-name">— J.Charles</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>“The process was very professional from start to finish. I sent  the photos, and within approximately 8hours , I had beautifully staged images ready to impress buyers.”</p>
+      <div class="testimonial-name">— Sally Matthews</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>“Thanks to the virtual staging, my listing stood out and attracted serious buyers right away. Totally worth it.”</p>
+      <div class="testimonial-name">— Agent</div>
+    </div>
+      <div class="testimonial-card">
+      <p>“Thanks RhoCha totally worth it! turned the keys for sure ”</p>
+      <div class="testimonial-name">— Asami Emily</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section id="contact" style="padding: 60px 20px; background-color: #cfcbcb; color: #f5f5f500; text-align: center;">
+  <h2>Contact Us</h2>
+  <p>Have questions or ready to transform your space? Reach out to Rhocha Virtual Staging today!</p>
+  <form action="mailto:ritawakio23@gmail.com" method="POST" enctype="text/plain" style="max-width: 400px; margin: 20px auto; display: flex; flex-direction: column; gap: 15px;">
+    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; border-radius: 5px; border: none; font-size: 16px;" />
+    <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; border-radius: 5px; border: none; font-size: 16px;" />
+    <textarea name="message" placeholder="Your Message" required rows="5" style="padding: 10px; border-radius: 5px; border: none; font-size: 16px;"></textarea>
+    <button type="submit" style="padding: 15px; background-color: #f4c84b; color: #1a1a1a; font-weight: bold; border: none; border-radius: 30px; cursor: pointer; text-transform: uppercase;">Send Message</button>
+  </form>
+</section>
+    
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+
+ 
+
+
+</body>
+</html>
